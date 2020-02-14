@@ -1,16 +1,20 @@
 import React from 'react'
 import PetCard from './PetCard'
 import './Pets.css'
+import { Card } from 'semantic-ui-react'
+
 
 const Pets = props => {
   const allpets = props.pets
-  console.log('allpets', allpets)
+  // console.log('allpets', allpets)
   const petCards = allpets.length > 0
     ? allpets.map(pet => <PetCard img="img" scr={pet.image} pet={pet} key={pet.id}/>)
     : []
-  console.log(petCards, props)
+  // console.log(petCards, props)
   return (<div>
-    {petCards}
+    <Card.Group>
+      {petCards}
+    </Card.Group>
   </div>)
 }
 

@@ -13,20 +13,20 @@ class App extends Component {
 		currentUser: null
 	}
 
-	// logOut = () => {
-	// 	localStorage.removeItem("token")
-	// 	this.setState({
-	// 		currentUser: null
-	// 	}, () => {
-	// 		this.props.history.push("/login")
-	// 	})
-	// }
-  //
-	// updateUser = (updatedUser) => {
-	// 	this.setState({
-	// 		currentUser: updatedUser
-	// 	})
-	// }
+	logOut = () => {
+		localStorage.removeItem("token")
+		this.setState({
+			currentUser: null
+		}, () => {
+			this.props.history.push("/login")
+		})
+	}
+
+	updateUser = (updatedUser) => {
+		this.setState({
+			currentUser: updatedUser
+		})
+	}
 
 	componentDidMount(token){
 		token  = localStorage.getItem("token")
@@ -73,12 +73,12 @@ class App extends Component {
 				<Navbar />
 				<Grid.Row centered>
 					<Switch>
-            <Route path='/login' render={(routeProps) => {
-              return <LoginForm {...routeProps} setCurrentUser={this.setCurrentUser} /> }} />
-            <Route path='/signup' component={SignupForm}/>
-
-
-
+            <Route path="/login" render={(routeProps) => {
+							return <LoginForm {...routeProps} setCurrentUser={this.setCurrentUser}/>
+						}} />
+						<Route path="/signup" render={(routeProps) => {
+							return <SignupForm {...routeProps} setCurrentUser={this.setCurrentUser}/>
+						}} />
 					</Switch>
 				</Grid.Row>
 			</Grid>
