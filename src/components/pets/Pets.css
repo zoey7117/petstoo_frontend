@@ -1,0 +1,33 @@
+#petContainer {
+ margin: 2rem;
+ text-align: center
+}
+.pet-card {
+ text-align: center;
+ letter-spacing: 1px;
+ border: grey solid 1px;
+ padding: 1rem;
+ width: 20rem;
+ height: 31rem;
+ display: inline-grid;
+ margin: 1rem 1rem;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: grey;
+
+}
+.pet-image {
+ justify-self: center;
+ height: 17.5rem;
+ width: 17.5rem;
+}
+
+.toys {
+ width: 17.5rem;
+ justify-self: center;
+ background-color: rbga(255, 255, 255, 50);
+ margin: 0
+}
