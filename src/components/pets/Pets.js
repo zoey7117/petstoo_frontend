@@ -25,12 +25,12 @@ class Pets extends React.Component{
 	render(){
 		const adoptPet = this.props.adoptPet
 		const allpets = this.props.pets
-		console.log('props',this.props, 'state',this.state, allpets, adoptPet)
+		// console.log('props',this.props, 'state',this.state, allpets, adoptPet)
 
 		 return  allpets.map(pet => {
 	return(
 		<Card.Group centered>
-		    <Card className='pet-card' data-action='this-pet' data-id={pet.id} >
+		    <Card className='pet-card' key={pet.id}>
 		      <Image src={pet.image}  alt='' className='pet-image' />
 
 		      { (this.state.front) ?
