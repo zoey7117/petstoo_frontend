@@ -16,7 +16,7 @@ class Navbar extends React.Component {
 							?
 							<Menu.Menu position="right">
 								<Link className="item" to={`/profile`}>
-									{this.props.currentUser.name} - ${this.props.currentUser.balance}
+									{this.props.currentUser.name} 
 								</Link>
 								<Menu.Item onClick={this.props.logOut}>
 									Log out

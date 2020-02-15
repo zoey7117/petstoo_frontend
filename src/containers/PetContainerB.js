@@ -1,5 +1,5 @@
 import React from 'react'
-import PetsB from '../components/pets/PetsB'
+import Pets from '../components/pets/Pets'
 
 
 class PetContainer extends React.Component {
@@ -41,7 +41,7 @@ class PetContainer extends React.Component {
     console.log('props', this.props, 'state',this.state)
     return (<div >
 
-      <PetsB pets={pets} adoptPet={this.adoptPet}/>
+      <Pets pets={pets} adoptPet={this.adoptPet}/>
 
     </div>)
   }

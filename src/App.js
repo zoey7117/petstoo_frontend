@@ -61,7 +61,7 @@ class App extends Component {
 			currentUser: resp.user
 		}, () => {
 			localStorage.setItem("token", resp.token)
-			// this.props.history.push(`/profile`)
+			this.props.history.push(`/`)
 		})
 	}
 
@@ -70,7 +70,7 @@ class App extends Component {
 		return (
 			<div>
 			<Grid>
-				<Navbar />
+				<Navbar currentUser={this.state.currentUser} logOut={this.logOut}/>
 				<Grid.Row centered>
 					<Switch>
             <Route path="/login" render={(routeProps) => {
