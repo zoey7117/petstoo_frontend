@@ -62,7 +62,7 @@ return(
 )
 })
 } else {
-	return <h4>please adopt a pet!<PetContainer/></h4>
+	return <h4><Link to={'/home'}>please adopt a pet!</Link></h4>
 }
 }
 }

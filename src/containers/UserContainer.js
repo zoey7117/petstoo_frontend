@@ -5,6 +5,7 @@ import UserPets from '../components/users/UserPets'
 
 class UserContainer extends React.Component{
 
+
   toggleAdopt = (petId) => {
 		fetch(`http://localhost:3000/api/v1/pets/${petId}/toggle_adopt`,{
 			method: "PATCH"
