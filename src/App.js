@@ -6,6 +6,7 @@ import { Grid } from 'semantic-ui-react'
 import Navbar from './components/navbar/Navbar'
 import LoginForm from './components/users/LoginForm'
 import SignupForm from './components/users/SignupForm'
+import UserContainer from './containers/UserContainer'
 import PetContainer from './containers/PetContainer'
 
 class App extends Component {
@@ -73,6 +74,10 @@ class App extends Component {
 				<Navbar currentUser={this.state.currentUser} logOut={this.logOut}/>
 				<Grid.Row centered>
 					<Switch>
+						<Route path="/user" render={(routeProps) => {
+						return <UserContainer {...routeProps} updateUser={this.updateUser} currentUser={this.state.currentUser}/>
+					}} />
+						<Route path="/home" component={PetContainer} />
             <Route path="/login" render={(routeProps) => {
 							return <LoginForm {...routeProps} setCurrentUser={this.setCurrentUser}/>
 						}} />

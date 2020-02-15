@@ -15,8 +15,8 @@ class Navbar extends React.Component {
 						{this.props.currentUser
 							?
 							<Menu.Menu position="right">
-								<Link className="item" to={`/profile`}>
-									{this.props.currentUser.name} 
+								<Link className="item" to={`/user`}>
+									{this.props.currentUser.name}
 								</Link>
 								<Menu.Item onClick={this.props.logOut}>
 									Log out
