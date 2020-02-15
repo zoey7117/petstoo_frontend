@@ -1,4 +1,5 @@
 import React from 'react'
+import { Fragment } from 'react'
 import Pets from '../components/pets/Pets'
 
 
@@ -39,11 +40,11 @@ class PetContainer extends React.Component {
     const {pets} = this.state
 
     console.log('props', this.props, 'state',this.state)
-    return (<div >
-
+    return (
+      	<Fragment>
       <Pets pets={pets} adoptPet={this.adoptPet}/>
-
-    </div>)
+    	</Fragment>
+    )
   }
 }
 

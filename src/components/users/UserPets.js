@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import PetContainer from '../../containers/PetContainer'
 
 class UserPets extends React.Component{
 	constructor(props){
