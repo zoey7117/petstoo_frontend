@@ -9,8 +9,8 @@ class Navbar extends React.Component {
 			<Grid.Row>
 				<Grid.Column width={16}>
 					<Menu>
-						<Link className="item" to="/shop">
-							Shop
+						<Link className="item" to="/home">
+							Home
 						</Link>
 						{this.props.currentUser
 							?

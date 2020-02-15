@@ -87,7 +87,6 @@ class App extends Component {
 					</Switch>
 				</Grid.Row>
 			</Grid>
-			<PetContainer/>
 			</div>
 
 		);
