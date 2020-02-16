@@ -1,32 +1,15 @@
 import React from 'react'
 import { Card, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import PetContainer from '../../containers/PetContainer'
 
 class UserPets extends React.Component{
-	constructor(props){
-    super()
-    this.state = {
-      front:true,
-      hungry:true,
-    }
-  }
-	toggleCard = ()=>{
-	  this.setState((prevState) =>{
-	    return {front:!prevState.front}
-	  })
-	}
 
-	hungryToggle =()=> {
-	  this.setState((prevState) => {
-	    return {hungry:!prevState.hungry}
-	  })
-	}
+
 
 	render(){
 		const toggleAdopt = this.props.adoptPet
 		const pets = this.props.pets		// const pets = currentUser.pets
-		console.log('props',this.props, 'state',this.state, this.props.currentUser)
+		console.log('props',this.props, this.props.currentUser, this.props.owner)
 
 	// if(currentUser)	{
 if(pets){

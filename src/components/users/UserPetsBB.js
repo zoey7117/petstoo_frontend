@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import PetContainer from '../../containers/PetContainer'
 
 class UserPets extends React.Component{
 	constructor(props){
@@ -23,10 +22,22 @@ class UserPets extends React.Component{
 	  })
 	}
 
+	// getUserPets = () => {
+	// 	fetch(`http://localhost:3000/api/v1/${this.props.currentUser.id}/pets`,{
+	// 		method: 'GET',
+	// 		headers: {
+	// 			"Authorization": localStorage.getItem("token")
+	// 		}
+	// 		.then(resp => resp.json())
+	// 		.then(console.log)
+	//
+	// 	})
+	// }
+
 	render(){
 		const toggleAdopt = this.props.adoptPet
 		const pets = this.props.pets		// const pets = currentUser.pets
-		console.log('props',this.props, 'state',this.state, this.props.currentUser)
+		console.log('props',this.props, 'state',this.state, this.props.currentUser, this.props.owner)
 
 	// if(currentUser)	{
 if(pets){

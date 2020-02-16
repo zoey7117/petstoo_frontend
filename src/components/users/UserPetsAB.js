@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import PetContainer from '../../containers/PetContainer'
 
 class UserPets extends React.Component{
 	constructor(props){
@@ -26,14 +25,14 @@ class UserPets extends React.Component{
 	render(){
 		const toggleAdopt = this.props.adoptPet
 		const pets = this.props.pets		// const pets = currentUser.pets
-		console.log('props',this.props, 'state',this.state, this.props.currentUser)
+		console.log('props',this.props, 'state',this.state, this.props.currentUser, this.props.owner)
 
 	// if(currentUser)	{
 if(pets){
 	return pets.map(pet => {
 return(
- <Card.Group key={pet.id} centered>
-		 <Card className='pet-card' >
+ <Card.Group centered>
+		 <Card key={pet.id} className='pet-card' >
 			 <Image src={pet.image}  alt='' className='pet-image' />
 				 <Card.Meta>Owner: <Link to={`/users/${pet.owner.id}`} >{pet.owner.name}</Link></Card.Meta>
 
