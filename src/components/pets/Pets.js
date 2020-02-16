@@ -29,8 +29,8 @@ class Pets extends React.Component{
 
 		 return  allpets.map(pet => {
 	return(
-		<Card.Group centered>
-		    <Card key={pet.id} className='pet-card' >
+		<Card.Group key={pet.id} centered>
+		    <Card  className='pet-card' >
 		      <Image src={pet.image}  alt='' className='pet-image' />
 						<Card.Meta>Owner: <Link to={`/users/${pet.owner.id}`} >{pet.owner.name}</Link></Card.Meta>
 

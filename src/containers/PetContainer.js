@@ -1,6 +1,8 @@
 import React from 'react'
 import { Fragment } from 'react'
 import Pets from '../components/pets/Pets'
+import UserPets from '../components/users/UserPets'
+
 
 
 class PetContainer extends React.Component {
@@ -43,6 +45,7 @@ class PetContainer extends React.Component {
     return (
       	<Fragment>
       <Pets pets={pets} adoptPet={this.adoptPet}/>
+      // <UserPets pets={pets} adoptPet={this.adoptPet}/>
     	</Fragment>
     )
   }

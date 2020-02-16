@@ -16,8 +16,8 @@ class UserContainer extends React.Component {
 	// 	})
 	// }
 
-	toggleSale = (petId) => {
-		fetch(`http://localhost:3000/api/v1/pets/${petId}/toggle_sale`,{
+	toggleAdopt = (petId) => {
+		fetch(`http://localhost:3000/api/v1/pets/${petId}/toggle_adopt`,{
 			method: "PATCH"
 		})
 		.then(res => res.json())
@@ -39,28 +39,7 @@ class UserContainer extends React.Component {
 		})
 	}
 
-	handleSubmit = () => {
-		fetch(`http://localhost:3000/api/v1/users/${this.props.currentUser.id}/add_balance`, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				"Accepts": "application/json",
-				"Authorization": localStorage.getItem("token")
-			},
-			body: JSON.stringify({balance: this.state.balance})
-		})
-		.then(res => res.json())
-		.then(response => {
-			if (response.errors){
-				alert(response.errors)
-			} else {
-				this.props.updateUser(response)
-				this.setState({
-					balance: 0,
-				})
-			}
-		})
-	}
+
 
 	getNewPet = () => {
 		fetch(`http://localhost:3000/api/v1/users/${this.props.currentUser.id}/get_pet`, {
