@@ -8,9 +8,7 @@ class Navbar extends React.Component {
 
 
 	render(){
-		function refreshPage() {
-			window.location.reload(false);
-		}
+	
 		return (
 			<Grid.Row>
 				<Grid.Column width={16}>
