@@ -1,5 +1,5 @@
 import React from 'react'
-import { Loader, Grid, Segment, Button } from 'semantic-ui-react'
+import { Loader, Segment, Button } from 'semantic-ui-react'
 import UserPets from "../components/users/UserPets"
 
 class UserContainer extends React.Component {
@@ -27,22 +27,15 @@ class UserContainer extends React.Component {
 
 		if(currentUser){
 			return (
-				<Grid columns={2} centered>
-					<Grid.Column width={3}>
-						<Segment>
-							hi {currentUser.name} !
-
-						</Segment>
-
-
-					</Grid.Column>
-					<Grid.Column width={9}>
-						<Segment>
-							<Button onClick={this.getNewPet}>Roll the dice!</Button>
-							<UserPets pets={currentUser.pets} />
-						</Segment>
-					</Grid.Column>
-				</Grid>
+				<div>
+					<Segment>
+						hi {currentUser.name} ! <br/>
+					<Button onClick={this.getNewPet}>Roll the dice!</Button>
+					</Segment>
+					<Segment>
+						<UserPets pets={currentUser.pets} />
+					</Segment>
+				</div>
 			)
 		} else {
 			return <Loader />

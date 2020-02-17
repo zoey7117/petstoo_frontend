@@ -99,7 +99,7 @@ class App extends Component {
       <MobileNavbar show={this.state.mobileNavbarOpen}/> {backdrop}
         <ToggleButton show={this.state.toggleButtonOpen}/>
 
-			
+
 
 			</div>
 

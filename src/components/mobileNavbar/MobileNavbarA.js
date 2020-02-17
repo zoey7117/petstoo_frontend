@@ -15,10 +15,10 @@ const MobileNavbar = props => {
 return (
   <nav className={mobileClasses}>
   <ul>
-    <li><Link to="/" >Home</Link></li>
-    <li><Link to="/login" >Log In</Link></li>
-    <li><Link to="/signup" >Sign Up</Link></li>
-    <li><Link to="/logout" >Log Out</Link></li>
+    <li><Link to="/" className='nav-home'>Home</Link></li>
+    <li><Link to="/login" className='nav-log-in' >Log In</Link></li>
+    <li><Link to="/signup" className='nav-sign-up' >Sign Up</Link></li>
+    <li><Link to="/logout" className='nav-log-out' >Log Out</Link></li>
   </ul>
 
   </nav>
