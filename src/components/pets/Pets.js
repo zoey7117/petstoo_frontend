@@ -8,6 +8,7 @@ class Pets extends React.Component{
     this.state = {
       front:true,
       hungry:true,
+			on_adopt: true
     }
   }
 	toggleCard = ()=>{
@@ -19,6 +20,12 @@ class Pets extends React.Component{
 	hungryToggle =()=> {
 	  this.setState((prevState) => {
 	    return {hungry:!prevState.hungry}
+	  })
+	}
+
+	adoptToggle =()=> {
+	  this.setState((prevState) => {
+	    return {on_adopt:!prevState.on_adopt}
 	  })
 	}
 
@@ -42,8 +49,7 @@ class Pets extends React.Component{
 			            <h5>i'm {pet.age} years old.</h5>
 			          <hr></hr>
 		          </Card.Description>
-
-								<Button size='mini' onClick={()=> adoptPet(pet.id)}>Adopt me!</Button>
+							{ (this.state.on_adopt) ? <Button className='adopt' size='mini' onClick={()=> adoptPet(pet.id)}>Adopt me!</Button> : <Button className='adopt' onClick={this.adoptToggle}></Button> }<br/><hr></hr>
 			          <Button size='mini' onClick={this.toggleCard}>flip to tend to me!</Button>
 	          </Card.Content>
 

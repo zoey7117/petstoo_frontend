@@ -1,20 +1,9 @@
 import React from 'react'
-import { Loader, Grid, Segment, Image, Form, Button } from 'semantic-ui-react'
+import { Loader, Grid, Segment, Button } from 'semantic-ui-react'
 import UserPets from "../components/users/UserPets"
 
 class UserContainer extends React.Component {
-	state = {
-		// user: null,
-		balance: 0,
-	}
-	// componentDidMount(){
-	// 	const userId = this.props.match.params.id
-	// 	fetch(`http://localhost:3001/api/v1/users/${userId}`)
-	// 	.then(res => res.json())
-	// 	.then(response => {
-	// 		this.setState({user: response})
-	// 	})
-	// }
+
 
 	toggleAdopt = (petId) => {
 		fetch(`http://localhost:3000/api/v1/pets/${petId}/toggle_adopt`,{
@@ -22,6 +11,7 @@ class UserContainer extends React.Component {
 		})
 		.then(res => res.json())
 		.then(response => {
+			debugger
 			let target = this.props.currentUser.pets.find(pet => pet.id === response.id)
 			let copy = [...this.props.currentUser.pets]
 
@@ -32,14 +22,6 @@ class UserContainer extends React.Component {
 			this.props.updateUser({...this.props.currentUser, pets: copy})
 		})
 	}
-
-	handleChange = (event) => {
-		this.setState({
-			[event.target.name]: event.target.value
-		})
-	}
-
-
 
 	getNewPet = () => {
 		fetch(`http://localhost:3000/api/v1/users/${this.props.currentUser.id}/get_pet`, {
@@ -57,6 +39,7 @@ class UserContainer extends React.Component {
 	}
 
 	render(){
+		console.log(this.props)
 
 		const { currentUser } = this.props
 
@@ -66,18 +49,9 @@ class UserContainer extends React.Component {
 					<Grid.Column width={3}>
 						<Segment>
 							<strong>{currentUser.name}</strong>
-							<p>Balance: ${currentUser.balance}</p>
-							<p>{currentUser.bio}</p>
+
 						</Segment>
-							<Segment>
-								<Form onSubmit={this.handleSubmit}>
-									<Form.Field>
-							      <label>Add to your balance!</label>
-							      <input type="number" onChange={this.handleChange} name="balance" value={this.state.balance} placeholder='Additional Balance' />
-							    </Form.Field>
-							    <Button type='submit'>Add</Button>
-								</Form>
-							</Segment>
+
 
 					</Grid.Column>
 					<Grid.Column width={9}>
