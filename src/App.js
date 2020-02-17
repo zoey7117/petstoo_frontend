@@ -58,21 +58,15 @@ class App extends Component {
 					"Authorization": token
 				}
 			})
-			.then(resp => resp.json())
-      .then(resp => {
-        this.setState({
-          currentUser: resp
-        })
-      })
-	// 		.then((response) => {
-	// 			if (response.errors) {
-	// 				alert(response.errors)
-	// 			} else {
-	// 				this.setState({
-	// 					currentUser: response
-	// 				})
-	// 			}
-			// })
+			.then((resp) => {
+				if (resp.errors) {
+					alert(resp.errors)
+				} else {
+					this.setState({
+						currentUser: resp
+					})
+				}
+			})
 		}
 	}
 
@@ -95,12 +89,21 @@ class App extends Component {
 		return (<div className='App'>
 
 
-			<Navbar buttonClickHandler={this.toggleButtonClickHandler}/>
+			<Navbar buttonClickHandler={this.toggleButtonClickHandler}currentUser={this.state.currentUser} logOut={this.logOut}/>
       <MobileNavbar show={this.state.mobileNavbarOpen}/> {backdrop}
         <ToggleButton show={this.state.toggleButtonOpen}/>
-
-			
-
+					<Switch>
+						<Route path="/user" render={(routeProps) => {
+						return <UserContainer {...routeProps} updateUser={this.updateUser} currentUser={this.state.currentUser}/>
+					}} />
+						<Route path="/home" component={PetContainer} />
+						<Route path="/login" render={(routeProps) => {
+							return <LoginForm {...routeProps} setCurrentUser={this.setCurrentUser}/>
+						}} />
+						<Route path="/signup" render={(routeProps) => {
+							return <SignupForm {...routeProps} setCurrentUser={this.setCurrentUser}/>
+						}} />
+					</Switch>
 			</div>
 
 		);
