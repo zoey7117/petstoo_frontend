@@ -83,7 +83,7 @@ class UserContainer extends React.Component {
 					<Grid.Column width={9}>
 						<Segment>
 							<Button onClick={this.getNewPet}>Roll the dice!</Button>
-							<UserPets pets={currentUser.pets} toggleSale={this.toggleSale}/>
+							<UserPets pets={currentUser.pets} toggleAdopt={this.toggleAdopt}/>
 						</Segment>
 					</Grid.Column>
 				</Grid>

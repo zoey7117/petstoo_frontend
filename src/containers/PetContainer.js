@@ -5,9 +5,11 @@ import UserPets from '../components/users/UserPets'
 
 
 
+
 class PetContainer extends React.Component {
   state = {
-    pets: []
+    pets: [],
+    adoptPets : []
   }
   //
 
@@ -21,6 +23,7 @@ class PetContainer extends React.Component {
   }
 
   adoptPet = (petId) => {
+    console.log(petId)
 		fetch(`http://localhost:3000/api/v1/pets/${petId}/adopt`, {
 			method: "POST",
 			headers: {
@@ -28,24 +31,30 @@ class PetContainer extends React.Component {
 			}
 		})
 		.then(res => res.json())
+       
 		.then(resp => {
 			this.setState(prevState => {
-				let adoptedPets = prevState.pets.filter(pet => pet.id !== resp.id)
+				let adoptedPets = prevState.pets.filter(pet => pet.id === resp.id)
+        console.log(adoptedPets, pet => pet.id === resp.id)
 				return {
-					pets: adoptedPets
+					adoptPets: adoptedPets
 				}
+
+
 			})
 		})
 	}
 
   render() {
     const {pets} = this.state
+    const {adoptPets} = this.state
+
 
     console.log('props', this.props, 'state',this.state)
     return (
       	<Fragment>
       <Pets pets={pets} adoptPet={this.adoptPet}/>
-      // <UserPets pets={pets} adoptPet={this.adoptPet}/>
+      <UserPets adoptPets={adoptPets} />
     	</Fragment>
     )
   }

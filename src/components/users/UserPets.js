@@ -23,7 +23,7 @@ class UserPets extends React.Component{
 	}
 
 	render(){
-		const toggleAdopt = this.props.adoptPet
+		const toggleAdopt = this.props.toggleAdopt
 		const pets = this.props.pets		// const pets = currentUser.pets
 		console.log('props',this.props, 'state',this.state, this.props.currentUser, this.props.owner)
 
