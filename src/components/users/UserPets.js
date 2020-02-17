@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
+
 class UserPets extends React.Component{
 	constructor(props){
     super()
@@ -30,9 +31,9 @@ class UserPets extends React.Component{
 if(pets.length){
 	return pets.map(pet => {
 return(
- <Card.Group key={pet.id} centered>
 
-		 <Card className='pet-card'  >
+
+		 <Card key={pet.id} className='pet-card'  >
 			 <Image src={pet.image}  alt='' className='pet-image' />
 
 
@@ -57,7 +58,6 @@ return(
 			 }
 
 		 </Card >
- </Card.Group>
 )
 })
 } else {

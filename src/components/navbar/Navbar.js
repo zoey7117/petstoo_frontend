@@ -29,7 +29,7 @@ class Navbar extends React.Component {
                     </Link>
                   </li>
                   <li>
-                    <Link onClick={this.props.logOut}>
+                    <Link to={'/logout'} onClick={this.props.logOut}>
                       Log out
                     </Link>
                   </li>
@@ -57,6 +57,9 @@ class Navbar extends React.Component {
                 </div>
           }
       </div>
+			<div className='mobile-navbar-button'>
+	<ToggleButton click={this.props.buttonClickHandler}/>
+	</div>
     </nav>)
   }
 }
