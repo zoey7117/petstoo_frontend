@@ -1,6 +1,8 @@
 import React from 'react'
 import { Fragment } from 'react'
 import Pets from '../components/pets/Pets'
+import UserPets from '../components/users/UserPets'
+import UserContainer from './UserContainer'
 
 
 
@@ -8,8 +10,8 @@ import Pets from '../components/pets/Pets'
 
 class PetContainer extends React.Component {
   state = {
-    pets: []
-  //   adoptPets : []
+    pets: [],
+    adoptPets : []
   }
   //
 
@@ -34,10 +36,10 @@ class PetContainer extends React.Component {
        
 		.then(resp => {
 			this.setState(prevState => {
-				let adoptedPets = prevState.pets.filter(pet => pet.id !== resp.id)
+				let adoptedPets = prevState.pets.filter(pet => pet.id === resp.id)
         console.log(adoptedPets, pet => pet.id === resp.id)
 				return {
-					pets: adoptedPets
+					adoptPets: adoptedPets
 				}
 
 
@@ -47,12 +49,14 @@ class PetContainer extends React.Component {
 
   render() {
     const {pets} = this.state
+    const {adoptPets} = this.state
 
 
     console.log('props', this.props, 'state',this.state)
     return (
       	<Fragment>
       <Pets pets={pets} adoptPet={this.adoptPet}/>
+      <UserContainer adoptPets={adoptPets} />
     	</Fragment>
     )
   }

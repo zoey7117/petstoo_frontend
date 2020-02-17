@@ -4,7 +4,13 @@ import { Link } from 'react-router-dom'
 
 
 class Navbar extends React.Component {
+
+
+
 	render(){
+		function refreshPage() {
+			window.location.reload(false);
+		}
 		return (
 			<Grid.Row>
 				<Grid.Column width={16}>
@@ -15,8 +21,9 @@ class Navbar extends React.Component {
 						{this.props.currentUser
 							?
 							<Menu.Menu position="right">
-								<Link className="item" to={`/user`}>
+								<Link  className="item" to={`/user`}>
 									{this.props.currentUser.name}
+
 								</Link>
 								<Menu.Item onClick={this.props.logOut}>
 									Log out

@@ -23,17 +23,18 @@ class UserPets extends React.Component{
 	}
 
 	render(){
-		const toggleAdopt = this.props.toggleAdopt
 		const pets = this.props.pets		// const pets = currentUser.pets
-		console.log('props',this.props, 'state',this.state, this.props.currentUser, this.props.owner)
+		console.log('props',this.props, 'state',this.state, this.props.currentUser, this.props.owner, this.props.toggleAdopt)
 
 	// if(currentUser)	{
-if(pets){
+if(pets.length){
 	return pets.map(pet => {
 return(
  <Card.Group key={pet.id} centered>
-		 <Card className='pet-card' >
+
+		 <Card className='pet-card'  >
 			 <Image src={pet.image}  alt='' className='pet-image' />
+
 
 			 { (this.state.front) ?
 			 (<>

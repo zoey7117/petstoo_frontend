@@ -5,24 +5,6 @@ import UserPets from "../components/users/UserPets"
 class UserContainer extends React.Component {
 
 
-	toggleAdopt = (petId) => {
-		fetch(`http://localhost:3000/api/v1/pets/${petId}/toggle_adopt`,{
-			method: "PATCH"
-		})
-		.then(res => res.json())
-		.then(response => {
-			debugger
-			let target = this.props.currentUser.pets.find(pet => pet.id === response.id)
-			let copy = [...this.props.currentUser.pets]
-
-			let index = copy.indexOf(target)
-
-			copy[index] = response
-
-			this.props.updateUser({...this.props.currentUser, pets: copy})
-		})
-	}
-
 	getNewPet = () => {
 		fetch(`http://localhost:3000/api/v1/users/${this.props.currentUser.id}/get_pet`, {
 			method: "POST",
@@ -32,9 +14,9 @@ class UserContainer extends React.Component {
       "Authorization": localStorage.getItem("token")
 			}
 		})
-		.then(res => res.json())
-		.then(response => {
-			this.props.updateUser(response)
+		.then(resp => resp.json())
+		.then(resp => {
+			this.props.updateUser(resp)
 		})
 	}
 
@@ -48,7 +30,7 @@ class UserContainer extends React.Component {
 				<Grid columns={2} centered>
 					<Grid.Column width={3}>
 						<Segment>
-							<strong>{currentUser.name}</strong>
+							hi {currentUser.name} !
 
 						</Segment>
 
@@ -57,7 +39,7 @@ class UserContainer extends React.Component {
 					<Grid.Column width={9}>
 						<Segment>
 							<Button onClick={this.getNewPet}>Roll the dice!</Button>
-							<UserPets pets={currentUser.pets} toggleAdopt={this.toggleAdopt}/>
+							<UserPets pets={currentUser.pets} />
 						</Segment>
 					</Grid.Column>
 				</Grid>

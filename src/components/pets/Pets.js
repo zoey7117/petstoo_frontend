@@ -39,7 +39,6 @@ class Pets extends React.Component{
 		<Card.Group key={pet.id} centered>
 		    <Card  className='pet-card' >
 		      <Image src={pet.image}  alt='' className='pet-image' />
-						<Card.Meta>Owner: <Link to={`/users/${pet.owner.id}`} >{pet.owner.name}</Link></Card.Meta>
 
 		      { (this.state.front) ?
 		      (<>
