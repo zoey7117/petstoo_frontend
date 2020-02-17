@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import './Pets.css'
 
 class Pets extends React.Component{
 	constructor(props){

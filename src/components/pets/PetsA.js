@@ -2,12 +2,13 @@ import React from 'react'
 import { Card, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
-class UserPets extends React.Component{
+class Pets extends React.Component{
 	constructor(props){
     super()
     this.state = {
       front:true,
       hungry:true,
+			on_adopt: true
     }
   }
 	toggleCard = ()=>{
@@ -22,17 +23,22 @@ class UserPets extends React.Component{
 	  })
 	}
 
+	adoptToggle =()=> {
+	  this.setState((prevState) => {
+	    return {on_adopt:!prevState.on_adopt}
+	  })
+	}
+
 	render(){
-		const { currentUser } = this.props
-		const pets = currentUser.pets
+		const adoptPet = this.props.adoptPet
+		const allpets = this.props.pets
 		// console.log('props',this.props, 'state',this.state, allpets, adoptPet)
 
-	if(currentUser)	{
-		return pets.map(pet => {
-		return(
-			<Card.Group centered>
-			    <Card className='pet-card' key={pet.id}>
-			      <Image src={pet.image}  alt='' className='pet-image' />
+		 return  allpets.map(pet => {
+	return(
+		<Card.Group key={pet.id} centered>
+		    <Card  className='pet-card' >
+		      <Image src={pet.image}  alt='' className='pet-image' />
 
 		      { (this.state.front) ?
 		      (<>
@@ -42,7 +48,7 @@ class UserPets extends React.Component{
 			            <h5>i'm {pet.age} years old.</h5>
 			          <hr></hr>
 		          </Card.Description>
-
+							{ (this.state.on_adopt) ? <Button className='adopt' size='mini' onClick={()=> adoptPet(pet.id)}>Adopt me!</Button> : <Button className='adopt' onClick={this.adoptToggle}></Button> }<br/><hr></hr>
 			          <Button size='mini' onClick={this.toggleCard}>flip to tend to me!</Button>
 	          </Card.Content>
 
@@ -60,8 +66,7 @@ class UserPets extends React.Component{
 })
 }
 }
-}
 
 
 
-export default UserPets
+export default Pets
