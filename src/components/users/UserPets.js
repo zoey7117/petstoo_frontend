@@ -28,7 +28,7 @@ class UserPets extends React.Component{
 		console.log('props',this.props, 'state',this.state, this.props.currentUser, this.props.owner, this.props.toggleAdopt)
 
 	// if(currentUser)	{
-if(pets.length){
+if(pets){
 	return pets.map(pet => {
 return(
 

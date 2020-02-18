@@ -86,7 +86,7 @@ class App extends Component {
 	}
 
 	render() {
-		console.log(this.state, this.state.currentUser)
+		console.log(this.state)
     let backdrop;
 
     if (this.state.mobileNavbarOpen) {
@@ -95,10 +95,11 @@ class App extends Component {
 		return (<div className='App'>
 
 
-			<Navbar buttonClickHandler={this.toggleButtonClickHandler} currentUser={this.state.currentUser} logOut={this.logOut}/>
+			<Navbar buttonClickHandler={this.toggleButtonClickHandler}/>
       <MobileNavbar show={this.state.mobileNavbarOpen}/> {backdrop}
         <ToggleButton show={this.state.toggleButtonOpen}/>
 
+				<Navbar currentUser={this.state.currentUser} logOut={this.logOut}/>
 					<Switch>
 						<Route path="/user" render={(routeProps) => {
 						return <UserContainer {...routeProps} updateUser={this.updateUser} currentUser={this.state.currentUser}/>
