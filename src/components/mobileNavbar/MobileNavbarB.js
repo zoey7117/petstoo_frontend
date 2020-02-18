@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom'
 import './MobileNavbar.css'
 
 
-const MobileNavbar = props => {
+class MobileNavbar extends React.Component {
+
+
+render(){
 
   let mobileClasses = ['mobile-navbar']
-  if(props.show) {
+  if(this.props.show) {
     mobileClasses = ['mobile-navbar open']
     console.log('hi')
   }
@@ -60,6 +63,7 @@ return (
   </nav>
 )
 
+}
 }
 
 export default MobileNavbar

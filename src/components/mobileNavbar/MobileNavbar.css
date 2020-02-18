@@ -35,9 +35,13 @@
 
 .mobile-navbar.open {
   transform: translateX(0);
-
-
 }
+
+.mobile-navbar .toggle-button_line .toggle .toggle-open {
+  background-color: yellow
+}
+
+
 @media (min-width: 769px) {
   .mobile-navbar {
     display: none;

@@ -96,7 +96,7 @@ class App extends Component {
 
 
 			<Navbar buttonClickHandler={this.toggleButtonClickHandler} currentUser={this.state.currentUser} logOut={this.logOut}/>
-      <MobileNavbar show={this.state.mobileNavbarOpen}/> {backdrop}
+      <MobileNavbar show={this.state.mobileNavbarOpen} currentUser={this.state.currentUser} /> {backdrop}
         <ToggleButton show={this.state.toggleButtonOpen}/>
 
 					<Switch>
