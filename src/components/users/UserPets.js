@@ -1,14 +1,15 @@
 import React from 'react'
-import { Card, Image, Button } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+
 
 class UserPets extends React.Component{
 	constructor(props){
     super()
     this.state = {
       front:true,
-      hungry:true,
-    }
+      hungry:true
+		}
   }
 	toggleCard = ()=>{
 	  this.setState((prevState) =>{
@@ -22,17 +23,30 @@ class UserPets extends React.Component{
 	  })
 	}
 
+	// componentDidUpdate(prevProps) {
+  //   // console.log('componentDidUpdate', this.props.trips.trips.length)
+  //   if (this.props.currentUser.pets.length > prevProps.currentUser.pets.length) {
+  //     this.props.updateUser(this.props.currentUser);
+  //   }
+  // }
+	//
+	// updateUser = (updatedUser) => {
+	// 	this.setState({
+	// 		currentUser: updatedUser
+	// 	})
+	// }
+
 	render(){
 		const pets = this.props.pets		// const pets = currentUser.pets
-		console.log('props',this.props, 'state',this.state, this.props.currentUser, this.props.owner, this.props.toggleAdopt)
+		console.log('props',this.props, 'state',this.state, this.props.currentUser, this.props.owner)
 
 	// if(currentUser)	{
-if(pets.length){
+if(pets){
 	return pets.map(pet => {
 return(
- <Card.Group key={pet.id} centered>
 
-		 <Card className='pet-card'  >
+
+		 <Card key={pet.id} className='pet-card'  >
 			 <Image src={pet.image}  alt='' className='pet-image' />
 
 
@@ -45,19 +59,18 @@ return(
 						 <hr></hr>
 					 </Card.Description>
 
-						 <Button size='mini' onClick={this.toggleCard}>flip to tend to me!</Button>
+						 <button size='mini' onClick={this.toggleCard}>flip to tend to me</button>
 				 </Card.Content>
 
 
 				 </>) :
 				 <Card.Content >
-					 { (this.state.hungry) ? <Button className='hungry' onClick={this.hungryToggle}>i'm stuffed, time for a nap!</Button> : <Button className='hungry'  onClick={this.hungryToggle}>i'm hungry, please feed me!</Button> }<br/><hr></hr>
-							 <Button size='mini' onClick={this.toggleCard}>flip back!</Button>
+					 { (this.state.hungry) ? <button className='hungry' onClick={this.hungryToggle}>i'm stuffed, time for a nap</button> : <button className='hungry'  onClick={this.hungryToggle}>i'm hungry, please feed me</button> }<br/><hr></hr>
+				 <button size='mini' onClick={this.toggleCard}>flip back</button>
 				 </Card.Content >
 			 }
 
 		 </Card >
- </Card.Group>
 )
 })
 } else {

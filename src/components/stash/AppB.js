@@ -10,6 +10,7 @@ import PetContainer from './containers/PetContainer'
 import MobileNavbar from "./components/mobileNavbar/MobileNavbar"
 import Backdrop from "./components/mobileNavbar/Backdrop"
 import ToggleButton from "./components/mobileNavbar/ToggleButton"
+import Home from './components/home/Home'
 
 
 
@@ -37,7 +38,7 @@ class App extends Component {
 		this.setState({
 			currentUser: null
 		}, () => {
-			this.props.history.push("/home")
+			this.props.history.push("/login")
 		})
 	}
 
@@ -52,7 +53,7 @@ class App extends Component {
 
 		if (token){
 			// load up their shit
-			fetch("https://boiling-garden-61294.herokuapp.com/api/v1/auto_login", {
+			fetch("http://localhost:3000/api/v1/auto_login", {
 				headers: {
 					"Authorization": token
 				}
@@ -85,7 +86,7 @@ class App extends Component {
 	}
 
 	render() {
-		console.log(this.state, this.state.currentUser)
+		console.log(this.state)
     let backdrop;
 
     if (this.state.mobileNavbarOpen) {
@@ -94,22 +95,10 @@ class App extends Component {
 		return (<div className='App'>
 
 
-			<Navbar buttonClickHandler={this.toggleButtonClickHandler} currentUser={this.state.currentUser} logOut={this.logOut}/>
-      <MobileNavbar show={this.state.mobileNavbarOpen} currentUser={this.state.currentUser} logOut={this.logOut} /> {backdrop}
+			<Navbar buttonClickHandler={this.toggleButtonClickHandler}/>
+      <MobileNavbar show={this.state.mobileNavbarOpen}/> {backdrop}
         <ToggleButton show={this.state.toggleButtonOpen}/>
 
-					<Switch>
-						<Route path="/user" render={(routeProps) => {
-						return <UserContainer {...routeProps} updateUser={this.updateUser} currentUser={this.state.currentUser}/>
-					}} />
-						<Route path="/home" component={PetContainer} />
-            <Route path="/login" render={(routeProps) => {
-							return <LoginForm {...routeProps} setCurrentUser={this.setCurrentUser}/>
-						}} />
-						<Route path="/signup" render={(routeProps) => {
-							return <SignupForm {...routeProps} setCurrentUser={this.setCurrentUser}/>
-						}} />
-					</Switch>
 
 
 			</div>

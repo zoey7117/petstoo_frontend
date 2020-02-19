@@ -4,11 +4,15 @@ import Pets from '../components/pets/Pets'
 
 
 
+
+
 class PetContainer extends React.Component {
   state = {
     pets: [],
     currentUser: null
+  //   adoptPets : []
   }
+  //
 
   componentDidMount() {
     fetch("https://boiling-garden-61294.herokuapp.com/api/v1/pets")
@@ -19,17 +23,13 @@ class PetContainer extends React.Component {
     })
   }
 
-
-
   adoptPet = (petId) => {
     console.log(petId)
 		fetch(`https://boiling-garden-61294.herokuapp.com/api/v1/pets/${petId}/adopt`, {
 			method: "POST",
 			headers: {
-				"Authorization": localStorage.getItem("token"),
-        "Content-Type": "application/json",
-        "Accepts": "application/json"
-			},
+				"Authorization": localStorage.getItem("token")
+			}
 		})
 		.then(res => res.json())
        
