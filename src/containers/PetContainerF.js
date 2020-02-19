@@ -23,8 +23,6 @@ class PetContainer extends React.Component {
     })
   }
 
-
-
   adoptPet = (petId) => {
     console.log(petId)
 		fetch(`http://localhost:3000/api/v1/pets/${petId}/adopt`, {
@@ -49,7 +47,7 @@ class PetContainer extends React.Component {
 		})
 
 
-
+    
 	}
 
   render() {

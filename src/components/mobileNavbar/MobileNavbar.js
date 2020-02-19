@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './MobileNavbar.css'
-import Logout from '../users/Logout'
-import PetContainer from '../../containers/PetContainer'
 
 class MobileNavbar extends React.Component {
 

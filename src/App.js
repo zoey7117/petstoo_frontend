@@ -10,7 +10,6 @@ import PetContainer from './containers/PetContainer'
 import MobileNavbar from "./components/mobileNavbar/MobileNavbar"
 import Backdrop from "./components/mobileNavbar/Backdrop"
 import ToggleButton from "./components/mobileNavbar/ToggleButton"
-import Home from './components/home/Home'
 
 
 
@@ -111,7 +110,6 @@ class App extends Component {
 							return <SignupForm {...routeProps} setCurrentUser={this.setCurrentUser}/>
 						}} />
 					</Switch>
-					<Home />
 
 
 			</div>

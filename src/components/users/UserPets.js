@@ -9,6 +9,7 @@ class UserPets extends React.Component{
     this.state = {
       front:true,
       hungry:true,
+			currentUser: null
     }
   }
 	toggleCard = ()=>{
@@ -21,6 +22,12 @@ class UserPets extends React.Component{
 	  this.setState((prevState) => {
 	    return {hungry:!prevState.hungry}
 	  })
+	}
+
+	updateUser = (updatedUser) => {
+		this.setState({
+			currentUser: updatedUser
+		})
 	}
 
 	render(){

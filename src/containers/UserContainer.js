@@ -3,6 +3,12 @@ import { Loader, Segment, Button } from 'semantic-ui-react'
 import UserPets from "../components/users/UserPets"
 
 class UserContainer extends React.Component {
+	state = {
+		currentUser: null
+	//   adoptPets : []
+	}
+
+
 
 
 	getNewPet = () => {
@@ -20,8 +26,9 @@ class UserContainer extends React.Component {
 		})
 	}
 
+
 	render(){
-		console.log(this.props)
+		console.log(this.props, )
 
 		const { currentUser } = this.props
 
