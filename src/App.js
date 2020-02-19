@@ -38,7 +38,7 @@ class App extends Component {
 		this.setState({
 			currentUser: null
 		}, () => {
-			this.props.history.push("/login")
+			this.props.history.push("/home")
 		})
 	}
 

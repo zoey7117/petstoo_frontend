@@ -8,7 +8,8 @@ import Pets from '../components/pets/Pets'
 
 class PetContainer extends React.Component {
   state = {
-    pets: []
+    pets: [],
+    currentUser: null
   //   adoptPets : []
   }
   //
@@ -35,14 +36,18 @@ class PetContainer extends React.Component {
 		.then(resp => {
 			this.setState(prevState => {
 				let adoptedPets = prevState.pets.filter(pet => pet.id !== resp.id)
-        console.log(adoptedPets, pet => pet.id === resp.id)
+        console.log(adoptedPets, pet => pet.id === resp.id, 'owner', pet => pet.owner)
 				return {
 					pets: adoptedPets
 				}
 
 
+
 			})
 		})
+
+
+    
 	}
 
   render() {

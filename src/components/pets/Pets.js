@@ -38,6 +38,7 @@ class Pets extends React.Component {
   render() {
     const adoptPet = this.props.adoptPet
     const allpets = this.props.pets
+    console.log(this.state, this.props)
 
     return allpets.map(pet => {
       return (<Card key={pet.id} className='pet-card'>
