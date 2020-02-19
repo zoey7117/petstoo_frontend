@@ -1,34 +1,13 @@
 import React from 'react'
-import { Loader, Segment, Button } from 'semantic-ui-react'
+import { Loader, Segment } from 'semantic-ui-react'
 import UserPets from "../components/users/UserPets"
 
 class UserContainer extends React.Component {
-	state = {
-		currentUser: null
-	//   adoptPets : []
-	}
 
-
-
-
-	getNewPet = () => {
-		fetch(`http://localhost:3000/api/v1/users/${this.props.currentUser.id}/get_pet`, {
-			method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      "Accepts": "application/json",
-      "Authorization": localStorage.getItem("token")
-			}
-		})
-		.then(resp => resp.json())
-		.then(resp => {
-			this.props.updateUser(resp)
-		})
-	}
 
 
 	render(){
-		console.log(this.props, )
+		console.log(this.props, 'props', this.props.currentUser)
 
 		const { currentUser } = this.props
 
@@ -36,11 +15,11 @@ class UserContainer extends React.Component {
 			return (
 				<div>
 					<Segment>
-						hi {currentUser.name} ! <br/>
-					<Button onClick={this.getNewPet}>Roll the dice!</Button>
+						hi {currentUser.name}! <br/>
+					<p>please refresh to update pets</p>
 					</Segment>
 					<Segment>
-						<UserPets pets={currentUser.pets} />
+						<UserPets pets={currentUser.pets} currentUser={currentUser}/>
 					</Segment>
 				</div>
 			)

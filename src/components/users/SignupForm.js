@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Button } from 'semantic-ui-react'
+import { Form } from 'semantic-ui-react'
 
 
 class SignupForm extends React.Component {
@@ -19,7 +19,7 @@ class SignupForm extends React.Component {
 
   createUser = () => {
     console.log('in signupform')
-		fetch("http://localhost:3000/api/v1/users", {
+		fetch("https://boiling-garden-61294.herokuapp.com/api/v1/users", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -51,18 +51,18 @@ class SignupForm extends React.Component {
 
         <Form onSubmit={this.handleSubmit}>
       	    <Form.Field>
-      	      <label>Name</label>
-      	      <input onChange={this.handleChange} name="name" value={this.state.name} placeholder='Name'autoComplete='off' />
+      	      <label>name</label>
+      	      <input onChange={this.handleChange} name="name" value={this.state.name} placeholder='name'autoComplete='off' />
       	    </Form.Field>
       	    <Form.Field>
-      	      <label>Password</label>
-      	      <input onChange={this.handleChange} type="password" name="password" value={this.state.password} placeholder='Password' autoComplete='off'/>
+      	      <label>password</label>
+      	      <input onChange={this.handleChange} type="password" name="password" value={this.state.password} placeholder='password' autoComplete='off'/>
       	    </Form.Field>
       	    <Form.Field>
-      	      <label>Password Confirmation</label>
-      	      <input onChange={this.handleChange} type="password" name="passwordConfirmation" value={this.state.passwordConfirmation} placeholder='Password Confirmation'autoComplete='off' />
+      	      <label>password confirmation</label>
+      	      <input onChange={this.handleChange} type="password" name="password Confirmation" value={this.state.passwordConfirmation} placeholder='password confirmation'autoComplete='off' />
       	    </Form.Field>
-      	    <Button type='submit'>Submit</Button>
+      	    <button type='submit'>Submit</button>
       	  </Form>
 
     )

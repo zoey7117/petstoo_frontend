@@ -21,7 +21,6 @@ body {
 }
 
  h3{
-  font-family: 'Amatic SC';
   font-size: 30pt;
   line-height: 100%;
   display: block;
@@ -29,22 +28,63 @@ body {
 }
 
 h4 {
-  font-family: 'Amatic SC';
   font-size: 40pt
 }
 h5 {
-  font-family: 'Amatic SC';
   font-size: 20pt;
   margin: 0;
   display: inline;
 
 }
 h6 {
-  font-family: 'Amatic SC';
   font-size: 30pt;
   display: inline;
 
 }
+
+p {
+  font-size: 15pt;
+}
+
+button {
+  font-family: 'Amatic SC';
+  font-size: 15pt;
+  margin: 1rem;
+  line-height: 80%;
+  text-transform: uppercase;
+  border-style:  solid grey;
+  border-width: thin;
+  text-align: center;
+  padding: .5rem;
+
+}
+
+
+
+button {
+  padding: .3rem;
+  background-color: grey;
+  color: white;
+}
+
+input {
+  width: 15%;
+}
+
+input, button {
+  font-family: 'Amatic SC';
+  font-size: 15pt;
+  margin: 1rem;
+  line-height: 80%;
+  text-transform: uppercase;
+  border-style:  solid grey;
+  border-width: thin;
+  text-align: center;
+
+
+}
+
+
 
 .container {
  margin-top: 20px;
@@ -54,6 +94,11 @@ h6 {
  display: none;
  text-align: center;
  align-items: center;
+}
+@media (max-width: 769px) {
+  input {
+    width: 40%;
+  }
 }
 @media (max-width: 768px){
   body {

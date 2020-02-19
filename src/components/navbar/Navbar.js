@@ -8,7 +8,7 @@ class Navbar extends React.Component {
   render() {
 
     return (<nav id="navbar">
-      <Link to="/home" className='navbar-logo'>Adopt a Pet!</Link>
+      <Link to="/home" className='navbar-logo'>Adopt a Pet</Link>
       <div className='spacer'/>
       <div className='navbar-words'>
 
