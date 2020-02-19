@@ -46,24 +46,11 @@ p {
   font-size: 15pt;
 }
 
+
+
 button {
-  font-family: 'Amatic SC';
-  font-size: 15pt;
-  margin: 1rem;
-  line-height: 80%;
-  text-transform: uppercase;
-  border-style:  solid grey;
-  border-width: thin;
-  text-align: center;
   padding: .5rem;
-
-}
-
-
-
-button {
-  padding: .3rem;
-  background-color: grey;
+  background-color: #909090;
   color: white;
 }
 
@@ -80,8 +67,6 @@ input, button {
   border-style:  solid grey;
   border-width: thin;
   text-align: center;
-
-
 }
 
 
