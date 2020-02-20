@@ -52,11 +52,9 @@ class App extends Component {
 
 		if (token){
 			// load up their shit
-			fetch("https://fathomless-everglades-14170.herokuapp.com/api/v1/auto_login", {
+			fetch("https://boiling-garden-61294.herokuapp.com/api/v1/auto_login", {
 				headers: {
-					"Authorization": token,
-					'Access-Control-Allow-Origin': 'https://pets-adopt.netlify.com',
-
+					"Authorization": token
 				}
 			})
 			.then(resp => resp.json())

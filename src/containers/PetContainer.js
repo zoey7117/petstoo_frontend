@@ -11,7 +11,7 @@ class PetContainer extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://fathomless-everglades-14170.herokuapp.com/api/v1/pets")
+    fetch("https://boiling-garden-61294.herokuapp.com/api/v1/pets")
       .then(resp => resp.json())
     // .then(console.log)
       .then(resp => {
@@ -23,14 +23,12 @@ class PetContainer extends React.Component {
 
   adoptPet = (petId) => {
     console.log(petId)
-		fetch(`https://fathomless-everglades-14170.herokuapp.com/api/v1/pets/${petId}/adopt`, {
+		fetch(`https://boiling-garden-61294.herokuapp.com/api/v1/pets/${petId}/adopt`, {
 			method: "POST",
 			headers: {
 				"Authorization": localStorage.getItem("token"),
         "Content-Type": "application/json",
-        "Accepts": "application/json",
-        'Access-Control-Allow-Origin': 'https://pets-adopt.netlify.com',
-
+        "Accepts": "application/json"
 			},
 		})
 		.then(res => res.json())

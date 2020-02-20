@@ -15,10 +15,9 @@ class LoginForm extends React.Component {
 
 	handleSubmit = () => {
 		console.log('logging in',this.state)
-		fetch("https://fathomless-everglades-14170.herokuapp.com/api/v1/login", {
+		fetch("https://boiling-garden-61294.herokuapp.com/api/v1/login", {
 			method: "POST",
 			headers: {
-				'Access-Control-Allow-Origin': 'https://pets-adopt.netlify.com',
 				"Content-Type": "application/json",
 				"Accepts": "application/json",
 

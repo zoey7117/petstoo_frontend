@@ -19,12 +19,11 @@ class SignupForm extends React.Component {
 
   createUser = () => {
     console.log('in signupform')
-		fetch("https://fathomless-everglades-14170.herokuapp.com/api/v1/users", {
+		fetch("https://boiling-garden-61294.herokuapp.com/api/v1/users", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 				"Accepts": "application/json",
-        'Access-Control-Allow-Origin': 'https://pets-adopt.netlify.com',
 			},
 			body: JSON.stringify(this.state)
 		})
