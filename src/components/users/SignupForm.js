@@ -17,22 +17,22 @@ class SignupForm extends React.Component {
 	}
 
 
-  createUser = () => {
-    console.log('in signupform')
-		fetch("https://boiling-garden-61294.herokuapp.com/api/v1/users", {
+  reateUser = () => {
+		fetch("http://localhost:3000/api/v1/users", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
+				'Access-Control-Allow-Origin': '*',
 				"Accepts": "application/json",
 			},
 			body: JSON.stringify(this.state)
 		})
-    .then(res => res.json())
-		.then((resp) => {
-			if (resp.errors){
-				alert(resp.errors)
+		.then(res => res.json())
+		.then((response) => {
+			if (response.errors){
+				alert(response.errors)
 			} else {
-				this.props.setCurrentUser(resp)
+				this.props.setCurrentUser(response)
 			}
 		})
 	}

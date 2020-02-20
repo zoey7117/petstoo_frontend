@@ -14,21 +14,21 @@ class LoginForm extends React.Component {
 	}
 
 	handleSubmit = () => {
-		console.log('logging in',this.state)
-		fetch("https://boiling-garden-61294.herokuapp.com/api/v1/login", {
+		fetch("http://localhost:3000/api/v1/login", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 				"Accepts": "application/json",
-
 			},
 			body: JSON.stringify(this.state)
 		})
 		.then(res => res.json())
-		.then((resp) => {
+		.then(resp => {
 			if (resp.errors){
+				// if there are erros, crap, the resp is an error
 				alert(resp.errors)
 			} else {
+				// if there are no errors, great, the resp is a user object
 				this.props.setCurrentUser(resp)
 			}
 		})

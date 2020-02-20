@@ -11,7 +11,7 @@ class PetContainer extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://boiling-garden-61294.herokuapp.com/api/v1/pets")
+    fetch("http://localhost:3000/api/v1/pets")
       .then(resp => resp.json())
     // .then(console.log)
       .then(resp => {
@@ -19,11 +19,9 @@ class PetContainer extends React.Component {
     })
   }
 
-
-
   adoptPet = (petId) => {
     console.log(petId)
-		fetch(`https://boiling-garden-61294.herokuapp.com/api/v1/pets/${petId}/adopt`, {
+		fetch(`http://localhost:3000/api/v1/pets/${petId}/adopt`, {
 			method: "POST",
 			headers: {
 				"Authorization": localStorage.getItem("token"),
@@ -32,7 +30,6 @@ class PetContainer extends React.Component {
 			},
 		})
 		.then(res => res.json())
-       
 		.then(resp => {
 			this.setState(prevState => {
 				let adoptedPets = prevState.pets.filter(pet => pet.id !== resp.id)
@@ -40,21 +37,12 @@ class PetContainer extends React.Component {
 				return {
 					pets: adoptedPets
 				}
-
-
-
 			})
 		})
-
-
-
 	}
 
   render() {
     const {pets} = this.state
-
-
-    console.log('props', this.props, 'state',this.state)
     return (
       	<Fragment>
       <Pets pets={pets} adoptPet={this.adoptPet}/>
