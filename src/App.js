@@ -55,7 +55,7 @@ class App extends Component {
 			fetch("https://fast-waters-11750.herokuapp.com/auto_login", {
 				headers: {
 					"Authorization": token,
-					'Access-Control-Allow-Origin': 'https://pets-adopt.netlify.com',
+					'Access-Control-Allow-Origin': 'https://inspiring-edison-c8c08c.netlify.com',
 
 				}
 			})

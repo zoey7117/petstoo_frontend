@@ -24,7 +24,7 @@ class SignupForm extends React.Component {
 			headers: {
 				"Content-Type": "application/json",
 				"Accepts": "application/json",
-        'Access-Control-Allow-Origin': 'https://pets-adopt.netlify.com',
+        'Access-Control-Allow-Origin': 'https://inspiring-edison-c8c08c.netlify.com',
 			},
 			body: JSON.stringify(this.state)
 		})

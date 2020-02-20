@@ -28,7 +28,7 @@ class PetContainer extends React.Component {
 				"Authorization": localStorage.getItem("token"),
         "Content-Type": "application/json",
         "Accepts": "application/json",
-        'Access-Control-Allow-Origin': 'https://pets-adopt.netlify.com',
+        'Access-Control-Allow-Origin': 'https://inspiring-edison-c8c08c.netlify.com',
 			},
 		})
 		.then(res => res.json())
