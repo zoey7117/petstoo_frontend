@@ -54,7 +54,9 @@ class App extends Component {
 			// load up their shit
 			fetch("https://fast-waters-11750.herokuapp.com/auto_login", {
 				headers: {
-					"Authorization": token
+					"Authorization": token,
+					'Access-Control-Allow-Origin': 'https://pets-adopt.netlify.com',
+
 				}
 			})
 			.then(resp => resp.json())
