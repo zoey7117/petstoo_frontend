@@ -10,7 +10,7 @@ class PetContainer extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/pets")
+    fetch("http://localhost:3000/api/v1/pets")
       .then(resp => resp.json())
     // .then(console.log)
       .then(resp => {
@@ -22,13 +22,12 @@ class PetContainer extends React.Component {
 
   adoptPet = (petId) => {
     console.log(petId)
-		fetch(`https://fast-waters-11750.herokuapp.com/pets/${petId}/adopt`, {
+		fetch(`http://localhost:3000/api/v1/pets/${petId}/adopt`, {
 			method: "POST",
 			headers: {
 				"Authorization": localStorage.getItem("token"),
         "Content-Type": "application/json",
         "Accepts": "application/json",
-        'Access-Control-Allow-Origin': 'https://inspiring-edison-c8c08c.netlify.com',
 			},
 		})
 		.then(res => res.json())

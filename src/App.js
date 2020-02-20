@@ -51,29 +51,20 @@ class App extends Component {
 		token  = localStorage.getItem("token")
 
 		if (token){
-			// load up their shit
-			fetch("https://fast-waters-11750.herokuapp.com/auto_login", {
+			fetch("http://localhost:3000/api/v1/auto_login", {
 				headers: {
 					"Authorization": token,
-					'Access-Control-Allow-Origin': 'https://inspiring-edison-c8c08c.netlify.com',
-
 				}
 			})
-			.then(resp => resp.json())
-      .then(resp => {
-        this.setState({
-          currentUser: resp
-        })
-      })
-	// 		.then((response) => {
-	// 			if (response.errors) {
-	// 				alert(response.errors)
-	// 			} else {
-	// 				this.setState({
-	// 					currentUser: response
-	// 				})
-	// 			}
-			// })
+			.then((resp) => {
+				if (resp.errors) {
+					alert(resp.errors)
+				} else {
+					this.setState({
+						currentUser: resp
+					})
+				}
+			})
 		}
 	}
 
@@ -82,9 +73,7 @@ class App extends Component {
 			currentUser: resp.user
 		}, () => {
 			localStorage.setItem("token", resp.token)
-			// this.props.history.push(`/users${this.state.currentUser.id}`)
 			this.props.history.push(`/`)
-
 		})
 	}
 
