@@ -17,7 +17,7 @@ class SignupForm extends React.Component {
 	}
 
 
-  reateUser = () => {
+  createUser = () => {
 		fetch("http://localhost:3000/api/v1/users", {
 			method: "POST",
 			headers: {
@@ -60,7 +60,7 @@ class SignupForm extends React.Component {
       	    </Form.Field>
       	    <Form.Field>
       	      <label>password confirmation</label>
-      	      <input onChange={this.handleChange} type="password" name="password Confirmation" value={this.state.passwordConfirmation} placeholder='password confirmation'autoComplete='off' />
+              <input onChange={this.handleChange} type="password" name="passwordConfirmation" value={this.state.passwordConfirmation} placeholder='Password Confirmation'autoComplete='off' />
       	    </Form.Field>
       	    <button type='submit'>Submit</button>
       	  </Form>
