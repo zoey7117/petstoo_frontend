@@ -52,7 +52,7 @@ class App extends Component {
 
 		if (token){
 			// load up their shit
-			fetch("https://boiling-garden-61294.herokuapp.com/api/v1/auto_login", {
+			fetch("https://fast-waters-11750.herokuapp.com/auto_login", {
 				headers: {
 					"Authorization": token
 				}

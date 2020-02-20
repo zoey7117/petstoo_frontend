@@ -19,7 +19,7 @@ class SignupForm extends React.Component {
 
   createUser = () => {
     console.log('in signupform')
-		fetch("https://boiling-garden-61294.herokuapp.com/api/v1/users", {
+		fetch("https://fast-waters-11750.herokuapp.com/users", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

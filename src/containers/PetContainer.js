@@ -10,7 +10,7 @@ class PetContainer extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://boiling-garden-61294.herokuapp.com/api/v1/pets")
+    fetch("https://fast-waters-11750.herokuapp.com/pets")
       .then(resp => resp.json())
     // .then(console.log)
       .then(resp => {
@@ -22,7 +22,7 @@ class PetContainer extends React.Component {
 
   adoptPet = (petId) => {
     console.log(petId)
-		fetch(`https://boiling-garden-61294.herokuapp.com/api/v1/pets/${petId}/adopt`, {
+		fetch(`https://fast-waters-11750.herokuapp.com/pets/${petId}/adopt`, {
 			method: "POST",
 			headers: {
 				"Authorization": localStorage.getItem("token"),
