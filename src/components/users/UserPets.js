@@ -23,18 +23,6 @@ class UserPets extends React.Component{
 	  })
 	}
 
-	// componentDidUpdate(prevProps) {
-  //   // console.log('componentDidUpdate', this.props.trips.trips.length)
-  //   if (this.props.currentUser.pets.length > prevProps.currentUser.pets.length) {
-  //     this.props.updateUser(this.props.currentUser);
-  //   }
-  // }
-	//
-	// updateUser = (updatedUser) => {
-	// 	this.setState({
-	// 		currentUser: updatedUser
-	// 	})
-	// }
 
 	render(){
 		const pets = this.props.pets		// const pets = currentUser.pets
