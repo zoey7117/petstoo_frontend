@@ -22,7 +22,7 @@ class PetContainer extends React.Component {
 
   adoptPet = (petId) => {
     console.log(petId)
-		fetch(`https://boiling-garden-61294.herokuapp.com/api/v1pets/${petId}/adopt`, {
+		fetch(`https://boiling-garden-61294.herokuapp.com/api/v1/pets/${petId}/adopt`, {
 			method: "POST",
 			headers: {
 				"Authorization": localStorage.getItem("token"),
