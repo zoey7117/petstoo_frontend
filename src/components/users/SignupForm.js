@@ -19,11 +19,12 @@ class SignupForm extends React.Component {
 
   createUser = () => {
     console.log('in signupform')
-		fetch("https://boiling-garden-61294.herokuapp.com/api/v1/users", {
+		fetch("https://fathomless-everglades-14170.herokuapp.com/api/v1/users", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 				"Accepts": "application/json",
+        'Access-Control-Allow-Origin': 'https://pets-adopt.netlify.com',
 			},
 			body: JSON.stringify(this.state)
 		})
@@ -60,7 +61,7 @@ class SignupForm extends React.Component {
       	    </Form.Field>
       	    <Form.Field>
       	      <label>password confirmation</label>
-      	      <input onChange={this.handleChange} type="password" name="password Confirmation" value={this.state.passwordConfirmation} placeholder='password confirmation'autoComplete='off' />
+      	      <input onChange={this.handleChange} type="password" name="password confirmation" value={this.state.passwordConfirmation} placeholder='password confirmation'autoComplete='off' />
       	    </Form.Field>
       	    <button type='submit'>Submit</button>
       	  </Form>
