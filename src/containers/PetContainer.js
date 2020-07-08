@@ -19,6 +19,7 @@ class PetContainer extends React.Component {
     })
   }
 
+//if go live need if/else statement here if not signed in and click alert appears
   adoptPet = (petId) => {
     console.log(petId)
 		fetch(`http://localhost:3000/api/v1/pets/${petId}/adopt`, {
