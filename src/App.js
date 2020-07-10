@@ -7,6 +7,7 @@ import { Switch, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import LoginForm from './components/users/LoginForm';
 import SignupForm from './components/users/SignupForm';
+import UserPets from './components/users/UserPets';
 import UserContainer from './containers/UserContainer';
 import MobileNavbar from './components/mobileNavbar/MobileNavbar';
 import Backdrop from './components/mobileNavbar/Backdrop';
@@ -76,13 +77,20 @@ class App extends Component {
 			},
 			() => {
 				localStorage.setItem('token', resp.token);
-				this.props.history.push(`/`);
+				this.props.history.push(`/user`);
 			}
 		);
 	};
 
 	render() {
-		console.log(this.state, this.state.currentUser, 'routeProps', this.routeProps);
+		console.log(
+			this.state,
+			this.state.currentUser,
+			'routeProps',
+			this.routeProps,
+			'this.state.currentUser',
+			this.state.currentUser
+		);
 		let backdrop;
 
 		if (this.state.mobileNavbarOpen) {

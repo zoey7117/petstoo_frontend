@@ -24,9 +24,10 @@ class UserPets extends React.Component{
 
 	render(){
 		const pets = this.props.pets		// const pets = currentUser.pets
-		console.log('props',this.props, 'state',this.state, 'currentUser', this.props.currentUser, 'currentUserPets', this.props.currentUser.pets)
+		console.log('props',this.props, 'state',this.state, 'currentUser', this.props.currentUser, 'currentUserPets', this.props.currentUser.pets, this.props.toggleAdopt)
 
-		if(pets.length > 0){
+		if (pets.length > 0) {
+
 			return pets.map(pet => {
 				return(
 
@@ -50,7 +51,8 @@ class UserPets extends React.Component{
 							 { (this.state.hungry) ? <button className='hungry' onClick={this.hungryToggle}>i'm stuffed, time for a nap</button> : <button className='hungry'  onClick={this.hungryToggle}>i'm hungry, please feed me</button> }<br/><hr></hr>
 						 <button size='mini' onClick={this.toggleCard}>flip back</button>
 						 </Card.Content >
-					 }
+						}
+
 				 </Card >
 				)
 			})
