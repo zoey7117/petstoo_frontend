@@ -123,22 +123,22 @@ class App extends Component {
 							);
 						}}
 					/>
+					<Fragment>
+						<Route
+							path="/login"
+							render={(routeProps) => {
+								return <LoginForm {...routeProps} setCurrentUser={this.setCurrentUser} />;
+							}}
+						/>
 
-					<Route
-						exact
-						path="/login"
-						render={(routeProps) => {
-							return <LoginForm {...routeProps} setCurrentUser={this.setCurrentUser} />;
-						}}
-					/>
-
-					<Route
-						path="/signup"
-						render={(routeProps) => {
-							return <SignupForm {...routeProps} setCurrentUser={this.setCurrentUser} />;
-						}}
-					/>
-					<Home />
+						<Route
+							path="/signup"
+							render={(routeProps) => {
+								return <SignupForm {...routeProps} setCurrentUser={this.setCurrentUser} />;
+							}}
+						/>
+						<Home />
+					</Fragment>
 				</Switch>
 			</div>
 		);
