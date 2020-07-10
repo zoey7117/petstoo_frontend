@@ -24,7 +24,7 @@ class UserPets extends React.Component{
 
 	render(){
 		const pets = this.props.pets		// const pets = currentUser.pets
-		console.log('props',this.props, 'state',this.state, this.props.currentUser, this.props.owner)
+		console.log('props',this.props, 'state',this.state, 'currentUser', this.props.currentUser, 'currentUserPets', this.props.currentUser.pets)
 
 		if(pets.length > 0){
 			return pets.map(pet => {
