@@ -82,7 +82,7 @@ class App extends Component {
 	};
 
 	render() {
-		console.log(this.state, this.state.currentUser);
+		console.log(this.state, this.state.currentUser, 'routeProps', this.routeProps);
 		let backdrop;
 
 		if (this.state.mobileNavbarOpen) {
@@ -117,6 +117,7 @@ class App extends Component {
 					/>
 
 					<Route
+						exact
 						path="/login"
 						render={(routeProps) => {
 							return <LoginForm {...routeProps} setCurrentUser={this.setCurrentUser} />;
@@ -129,8 +130,8 @@ class App extends Component {
 							return <SignupForm {...routeProps} setCurrentUser={this.setCurrentUser} />;
 						}}
 					/>
+					<Home />
 				</Switch>
-				<Home />
 			</div>
 		);
 	}
