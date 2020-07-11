@@ -5,9 +5,9 @@ import './MobileNavbar.css';
 class MobileNavbar extends React.Component {
 	render() {
 		let mobileClasses = [ 'mobile-navbar ' ];
+
 		if (this.props.show) {
 			mobileClasses = [ 'mobile-navbar open' ];
-			console.log(this.props);
 		}
 
 		return (

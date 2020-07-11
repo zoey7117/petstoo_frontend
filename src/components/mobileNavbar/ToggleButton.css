@@ -1,43 +1,38 @@
-.toggle {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	background-color: transparent;
-	color: #fff;
-	border: none;
-	width: 28px;
-	height: 30px;
-	outline: none;
-	padding: 5px;
-	margin-top: 20px;
-	/* cursor: pointer; */
-	box-sizing: border-box;
-	/* position: fixed; */
+.mobile-navbar-button {
+	width: 60px;
+	height: 60px;
 }
-
-.toggle:focus {
-	outline: none;
-}
-
-.toggle-button.line1,
-.toggle-button.line2,
-.toggle-button.line3 {
-	content: '';
-	background-color: #fff;
-	height: 2px;
-	width: 28px;
-	border-radius: 4px;
-	transition: all ease-in-out 0.3s;
-}
-
-/* .toggle-button.line1 {
-	margin-top: -12.8px;
-	transform: rotate(45deg);
-}
-.toggle-button.line2 {
+button.toggle {
 	background: transparent;
 }
-.toggle-button.line3 {
-	margin-top: 12.8px;
-	transform: rotate(-45deg);
-} */
+
+.mobile-navbar-button button.toggle .topLine,
+.middleLine,
+.bottomLine {
+	width: 40px;
+	height: 2px;
+	position: absolute;
+	margin-left: 0;
+	margin-right: 0;
+}
+.mobile-navbar-button button.toggle {
+	width: 60px;
+	height: 60px;
+	background: transparent;
+}
+.mobile-navbar-button button.toggle:focus {
+	box-shadow: none;
+}
+
+.mobile-navbar-button button.toggle .topLine {
+	margin-top: -20px;
+	background-color: white;
+}
+.mobile-navbar-button button.toggle .middleLine {
+	margin-top: -10px;
+	background-color: white;
+}
+.mobile-navbar-button button.toggle .bottomLine {
+	margin-top: 0px;
+	background-color: white;
+}

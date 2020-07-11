@@ -23,8 +23,8 @@ class App extends Component {
 	toggleButtonClickHandler = () => {
 		this.setState((prevState) => {
 			return {
-				mobileNavbarOpen: !prevState.mobileNavbarOpen,
-				toggleButtonOpen: !prevState.toggleButtonOpen
+				mobileNavbarOpen: !prevState.mobileNavbarOpen
+				// toggleButtonOpen: !prevState.toggleButtonOpen
 			};
 		});
 	};
