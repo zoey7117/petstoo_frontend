@@ -4,19 +4,6 @@ import './NavBar.css';
 import ToggleButton from '../mobileNavbar/ToggleButton';
 
 class Navbar extends React.Component {
-<<<<<<< HEAD
-
-  render() {
-
-    return (<nav id="navbar">
-      <Link to="/home" className='navbar-logo'>Adopt a Pet</Link>
-      <div className='spacer'/>
-      <div className='navbar-words'>
-
-          {
-            this.props.currentUser
-              ? <div>
-=======
 	render() {
 		return (
 			<nav id="navbar">
@@ -27,7 +14,6 @@ class Navbar extends React.Component {
 				<div className="navbar-words">
 					{this.props.currentUser ? (
 						<div>
->>>>>>> julyTry
 							<ul>
 								<li>
 									<Link to="/home">Home</Link>
