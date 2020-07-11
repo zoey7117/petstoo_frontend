@@ -1,92 +1,107 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 html {
-  height: 100%;
+	height: 100%;
 }
 
 body {
-  font-family: 'Amatic SC';
-  text-align: center;
-  font-size: 30pt;
-  background-color: #fff;
-  color: #333;
-  padding-top: 80px;
-  height: 100%;
+	font-family: 'Amatic SC';
+	text-align: center;
+	font-size: 30pt;
+	background-color: #fff;
+	color: #333;
+	padding-top: 80px;
+	height: 100%;
 }
 
- h3 {
-  font-size: 30pt;
-  line-height: 100%;
-  display: block;
-  margin: 0;
+h3 {
+	font-size: 30pt;
+	line-height: 100%;
+	display: block;
+	margin: 0;
 }
 
 h4 {
-  font-size: 40pt
+	font-size: 40pt;
 }
 
 h5 {
-  font-size: 20pt;
-  margin: 0;
-  display: inline;
+	font-size: 20pt;
+	margin: 0;
+	display: inline;
 }
 
 h6 {
-  font-size: 30pt;
-  display: inline;
+	font-size: 30pt;
+	display: inline;
 }
 
 p {
-  font-size: 15pt;
+	font-size: 15pt;
 }
-
 
 button {
-  padding: .5rem;
-  background-color: #909090;
-  color: white;
+	padding: .5rem;
+	background-color: #909090;
+	color: white;
 }
-
-input {
-  width: 15%;
+.ui.form {
+	display: flex;
+	justify-content: center;
 }
-
-input, button {
-  font-family: 'Amatic SC';
-  font-size: 15pt;
-  margin: 1rem;
-  line-height: 80%;
-  text-transform: uppercase;
-  border-style:  solid grey;
-  border-width: thin;
-  text-align: center;
+input,
+button {
+	font-family: 'Amatic SC';
+	font-size: 15pt;
+	margin: 1rem;
+	line-height: 80%;
+	text-transform: uppercase;
+	border-width: thin;
+	text-align: center;
+}
+button {
+	border-style: none;
+}
+label {
+	font-size: 20pt;
+}
+input:hover,
+button:hover {
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, .4);
+}
+button:hover {
+	border-style: white;
+}
+input:focus,
+button:focus {
+	outline: 0;
 }
 
 .container {
- margin-top: 20px;
- padding: 1rem;
- width: stretch;
- height: auto;
- display: none;
- text-align: center;
- align-items: center;
+	margin-top: 20px;
+	padding: 1rem;
+	width: stretch;
+	height: auto;
+	display: none;
+	text-align: center;
+	align-items: center;
 }
 
 @media (max-width: 769px) {
-  input {
-    width: 40%;
-  }
+	input {
+		width: 40%;
+	}
 }
 
-@media (max-width: 768px){
-  body {
-    padding-top: 50px;
-  }
+@media (max-width: 768px) {
+	body {
+		padding-top: 50px;
+	}
 }
