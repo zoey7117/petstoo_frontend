@@ -68,6 +68,7 @@ class SignupForm extends React.Component {
 						name="passwordConfirmation"
 						value={this.state.passwordConfirmation}
 						autoComplete="off"
+						className="confirmation"
 					/>
 				</Form.Field>
 				<button type="submit">Submit</button>

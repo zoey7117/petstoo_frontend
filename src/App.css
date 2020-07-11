@@ -55,6 +55,7 @@ button {
 .ui.form {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 input,
 button {
@@ -95,13 +96,24 @@ button:focus {
 }
 
 @media (max-width: 769px) {
-	input {
-		width: 40%;
+	body {
+		padding-top: 50px;
 	}
 }
 
-@media (max-width: 768px) {
-	body {
-		padding-top: 50px;
+@media (max-width: 900px) {
+	.ui.form {
+		flex-wrap: wrap;
+		width: 90%;
+		margin: auto;
+	}
+}
+
+@media (max-width: 465px) {
+	.ui.form {
+		width: 100%;
+		margin: auto;
+		line-height: .8;
+		margin-left: 1.5%;
 	}
 }
