@@ -1,0 +1,38 @@
+.mobile-navbar-button {
+	width: 60px;
+	height: 60px;
+}
+button.toggle {
+	background: transparent;
+}
+
+.mobile-navbar-button button.toggle .topLine2,
+.middleLine2,
+.bottomLine2 {
+	width: 40px;
+	height: 2px;
+	position: absolute;
+	margin-left: 0;
+	margin-right: 0;
+}
+.mobile-navbar-button button.toggle {
+	width: 60px;
+	height: 60px;
+	background: transparent;
+}
+.mobile-navbar-button button.toggle:focus {
+	box-shadow: none;
+}
+
+.mobile-navbar-button button.toggle .topLine2 {
+	transform: rotate(45deg);
+	background-color: white;
+}
+.mobile-navbar-button button.toggle .middleLine2 {
+	margin-top: -10px;
+	background-color: transparent;
+}
+.mobile-navbar-button button.toggle .bottomLine2 {
+	transform: rotate(-45deg);
+	background-color: white;
+}
