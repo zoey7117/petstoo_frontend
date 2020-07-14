@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from 'semantic-ui-react';
+import { Form, Button } from 'semantic-ui-react';
 
 class SignupForm extends React.Component {
 	state = {
@@ -68,10 +68,10 @@ class SignupForm extends React.Component {
 						name="passwordConfirmation"
 						value={this.state.passwordConfirmation}
 						autoComplete="off"
-						className="confirmation"
+						// className="confirmation"
 					/>
 				</Form.Field>
-				<button type="submit">Submit</button>
+				<Button type="submit">Submit</Button>
 			</Form>
 		);
 	}

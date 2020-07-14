@@ -18,7 +18,8 @@ class LoginForm extends React.Component {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				Accepts: 'application/json'
+				Accepts: 'application/json',
+				'Access-Control-Allow-Origin': '*'
 			},
 			body: JSON.stringify(this.state)
 		})
