@@ -83,14 +83,14 @@ class App extends Component {
 	};
 
 	render() {
-		console.log(
-			this.state,
-			this.state.currentUser,
-			'routeProps',
-			this.routeProps,
-			'this.state.currentUser',
-			this.state.currentUser
-		);
+		// console.log(
+		// 	this.state,
+		// 	this.state.currentUser,
+		// 	'routeProps',
+		// 	this.routeProps,
+		// 	'this.state.currentUser',
+		// 	this.state.currentUser
+		// );
 		let backdrop;
 
 		if (this.state.mobileNavbarOpen) {
@@ -137,7 +137,7 @@ class App extends Component {
 								return <SignupForm {...routeProps} setCurrentUser={this.setCurrentUser} />;
 							}}
 						/>
-						<Home />
+						<Home updateUser={this.updateUser} currentUser={this.state.currentUser} />
 					</Fragment>
 				</Switch>
 			</div>

@@ -1,10 +1,10 @@
 import React from 'react';
 import PetContainer from '../../containers/PetContainer';
 
-const Home = () => {
+const Home = (props) => {
 	return (
 		<div>
-			<PetContainer />
+			<PetContainer updateUser={props.updateUser} currentUser={props.currentUser} />
 		</div>
 	);
 };

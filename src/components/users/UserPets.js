@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
+import UserContainer from '../../containers/UserContainer'
 
 
 class UserPets extends React.Component{
@@ -24,7 +25,7 @@ class UserPets extends React.Component{
 
 	render(){
 		const pets = this.props.pets		// const pets = currentUser.pets
-		console.log('props',this.props, 'state',this.state, 'currentUser', this.props.currentUser, 'currentUserPets', this.props.currentUser.pets, this.props.toggleAdopt)
+		console.log('props',this.props, 'state',this.state, 'currentUser', this.props.currentUser, 'currentUserPets', this.props.currentUser.pets)
 
 		if (pets.length > 0) {
 
