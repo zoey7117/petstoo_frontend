@@ -44,7 +44,7 @@ class PetContainer extends React.Component {
 				const user = Object.assign({}, this.props.currentUser);
 				// console.log('user', user, 'this.props.updateUser()', this.props.updateUser());
 				user.pets.push(resp);
-				this.state.updateUser(user);
+				this.props.updateUser(user);
 				// }
 				this.setState((prevState) => {
 					let adoptedPets = prevState.pets.filter((pet) => pet.id !== resp.id);

@@ -15,6 +15,7 @@ class SignupForm extends React.Component {
 	};
 
 	createUser = () => {
+		// fetch(`https://pacific-hollows-81769.herokuapp.com/api/v1/users`, {
 		fetch('http://localhost:3000/api/v1/users', {
 			method: 'POST',
 			headers: {

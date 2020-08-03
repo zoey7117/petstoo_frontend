@@ -56,7 +56,9 @@ class App extends Component {
 
 		if (token) {
 			// load up their shit
-			fetch('http://localhost:3000/api/v1/auto_login', {
+			fetch(`https://pacific-hollows-81769.herokuapp.com/api/v1/auto_login`, {
+				// fetch('http://localhost:3000/api/v1/auto_login', {
+
 				headers: {
 					Authorization: token
 				}

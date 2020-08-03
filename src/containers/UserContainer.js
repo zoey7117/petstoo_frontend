@@ -7,14 +7,13 @@ class UserContainer extends React.Component {
 		console.log(this.props, 'props', this.props.currentUser);
 
 		const { currentUser } = this.props;
-		// console.log('this.props.currentUser.pets', this.props.currentUser.pets);
+		console.log('this.props.currentUser.pets', this.props.currentUser.pets);
 
 		if (currentUser) {
 			return (
 				<div>
 					<Segment>
 						hi {currentUser.name}! <br />
-						<p>please refresh to update pets</p>
 					</Segment>
 					<Segment>
 						<UserPets pets={currentUser.pets} currentUser={currentUser} />
