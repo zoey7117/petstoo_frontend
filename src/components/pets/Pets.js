@@ -1,15 +1,29 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router';
 import { Card, Image } from 'semantic-ui-react';
 import './Pets.css';
 import './Pet.js';
 
 class Pets extends React.Component {
-	constructor(props) {
+	constructor({ updateUser, currentUser }) {
 		super();
 		this.state = {
-			on_adopt: true
+			on_adopt: true,
+			currentUser: currentUser,
+			updateUser: updateUser,
+			redirect: false
 		};
 	}
+
+	setRedirect = () => {
+		this.setState({ redirect: true });
+	};
+	renderRedirect = () => {
+		if (this.state.redirect) {
+			return <Redirect to={`/user`}>{this.props.currentUser.name}</Redirect>;
+		}
+	};
 
 	adoptToggle = () => {
 		this.setState((prevState) => {
@@ -22,7 +36,7 @@ class Pets extends React.Component {
 	render() {
 		const adoptPet = this.props.adoptPet;
 		const allpets = this.props.pets;
-		// console.log(this.state, this.props);
+		console.log(this.state, 'this.props', this.props, 'this.props.currentUser', this.props.currentUser);
 
 		return allpets.map((pet) => {
 			return (
@@ -37,9 +51,21 @@ class Pets extends React.Component {
 								<hr />
 							</Card.Description>
 							{this.state.on_adopt ? (
-								<button className="adopt" size="mini" onClick={() => adoptPet(pet.id)}>
-									Adopt me!
-								</button>
+								<div>
+									{this.renderRedirect()}
+									<button
+										className="adopt"
+										size="mini"
+										onClick={() => {
+											adoptPet(pet.id);
+											{
+												this.setRedirect();
+											}
+										}}
+									>
+										Adopt me!
+									</button>
+								</div>
 							) : (
 								<button className="adopt" onClick={this.adoptToggle} />
 							)}
@@ -53,3 +79,8 @@ class Pets extends React.Component {
 }
 
 export default Pets;
+
+{
+	/* <button onClick={this.redirectHandler}>click me</button>
+                    {this.renderRedirect()} */
+}

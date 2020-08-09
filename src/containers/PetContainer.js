@@ -11,8 +11,11 @@ class PetContainer extends React.Component {
 			updateUser: updateUser
 		};
 	}
+	_isMounted = false;
 
 	componentDidMount() {
+		this._isMounted = true;
+
 		// fetch('http://localhost:3000/api/v1/pets')
 		fetch('https://pacific-hollows-81769.herokuapp.com/api/v1/pets')
 			.then((resp) => resp.json())
@@ -20,6 +23,10 @@ class PetContainer extends React.Component {
 			.then((resp) => {
 				this.setState({ pets: resp });
 			});
+	}
+
+	componentWillUnmount() {
+		this._isMounted = false;
 	}
 
 	//if go live need if/else statement here if not signed in and click alert appears
@@ -56,10 +63,16 @@ class PetContainer extends React.Component {
 	};
 
 	render() {
+		console.log('this.props', this.props, 'this.state', this.state);
 		const { pets } = this.state;
 		return (
 			<Fragment>
-				<Pets pets={pets} adoptPet={this.adoptPet} />
+				<Pets
+					pets={pets}
+					adoptPet={this.adoptPet}
+					updateUser={this.props.updateUser}
+					currentUser={this.props.currentUser}
+				/>
 			</Fragment>
 		);
 	}

@@ -4,7 +4,7 @@ import UserPets from '../components/users/UserPets';
 
 class UserContainer extends React.Component {
 	render() {
-		console.log(this.props, 'props', this.props.currentUser);
+		// console.log(this.props, 'props', this.props.currentUser);
 		// console.log(this.props.currentUser.pets);
 
 		const { currentUser } = this.props;
