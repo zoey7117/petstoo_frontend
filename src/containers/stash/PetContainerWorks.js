@@ -13,8 +13,6 @@ class PetContainer extends React.Component {
 	}
 	_isMounted = false;
 
-	abortController = new AbortController();
-
 	componentDidMount() {
 		this._isMounted = true;
 
@@ -23,7 +21,7 @@ class PetContainer extends React.Component {
 			.then((resp) => resp.json())
 			// .then(console.log)
 			.then((resp) => {
-				if (this._isMounted) this.setState({ pets: resp });
+				this.setState({ pets: resp });
 			});
 	}
 
@@ -31,8 +29,9 @@ class PetContainer extends React.Component {
 		this._isMounted = false;
 	}
 
-	adoptPet = (petId) => {
-		if (this.props.currentUser) {
+	//if go live need if/else statement here if not signed in and click alert appears
+	if(currentUser) {
+		adoptPet = (petId) => {
 			console.log(petId);
 			// fetch(`http://localhost:3000/api/v1/pets/${petId}/adopt`, {
 			fetch(`https://pacific-hollows-81769.herokuapp.com/api/v1/pets/${petId}/adopt`, {
@@ -59,13 +58,27 @@ class PetContainer extends React.Component {
 						};
 					});
 				});
-		} else {
-			alert('Please sign up or log in');
+
+
+
 		}
-	};
-	// }
+	} else {
+	return 'Please Sign Up'
+}
 
 	render() {
+		console.log(
+			'this.props',
+			this.props,
+			'this.state',
+			this.state,
+			'this.currentUser',
+			this.currentUser,
+			'this.props.currentUser',
+			this.props.currentUser,
+			'this.state.currentUser',
+			this.state.currentUser
+		);
 		const { pets } = this.state;
 		return (
 			<Fragment>

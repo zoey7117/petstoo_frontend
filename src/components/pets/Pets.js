@@ -20,7 +20,7 @@ class Pets extends React.Component {
 		this.setState({ redirect: true });
 	};
 	renderRedirect = () => {
-		if (this.state.redirect) {
+		if (this.props.currentUser && this.state.redirect) {
 			return <Redirect to={`/user`}>{this.props.currentUser.name}</Redirect>;
 		}
 	};
@@ -34,9 +34,9 @@ class Pets extends React.Component {
 	};
 
 	render() {
+		console.log(this.props.currentUser);
 		const adoptPet = this.props.adoptPet;
 		const allpets = this.props.pets;
-		console.log(this.state, 'this.props', this.props, 'this.props.currentUser', this.props.currentUser);
 
 		return allpets.map((pet) => {
 			return (
@@ -79,8 +79,3 @@ class Pets extends React.Component {
 }
 
 export default Pets;
-
-{
-	/* <button onClick={this.redirectHandler}>click me</button>
-                    {this.renderRedirect()} */
-}

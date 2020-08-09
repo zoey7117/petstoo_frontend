@@ -23,7 +23,3 @@ class UserPets extends React.Component {
 }
 
 export default UserPets;
-
-{
-	/* <button onClick={(event) => (window.location.href = '/home')}>please adopt a pet</button> */
-}
