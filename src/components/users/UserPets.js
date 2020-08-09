@@ -22,8 +22,15 @@ class UserPets extends React.Component {
 		// const pets = this.props.pets; // const pets = currentUser.pets
 		// // console.log('props',this.props, 'state',this.state, 'currentUser', this.props.currentUser, 'currentUserPets', this.props.currentUser.pets)
 		// console.log('props',this.props, 'state',this.state, 'currentUser', this.props.currentUser, 'currentUserPets', this.props.currentUser.pets)
-
-		return <div>{this.renderPets()}</div>;
+		if (this.props.currentUser.pets.length === 0) {
+			return (
+				<h5>
+					<button onClick={(event) => (window.location.href = '/home')}>please adopt a pet</button>
+				</h5>
+			);
+		} else {
+			return <div>{this.renderPets()}</div>;
+		}
 	}
 }
 
