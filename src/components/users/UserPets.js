@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Pet from '../pets/Pet';
 
 class UserPets extends React.Component {
@@ -10,7 +11,9 @@ class UserPets extends React.Component {
 		if (this.props.currentUser.pets.length === 0) {
 			return (
 				<h5>
-					<button onClick={(event) => (window.location.href = '/home')}>please adopt a pet</button>
+					<Link to="/home" className="button">
+						please adopt a pet
+					</Link>
 				</h5>
 			);
 		} else {
@@ -20,3 +23,7 @@ class UserPets extends React.Component {
 }
 
 export default UserPets;
+
+{
+	/* <button onClick={(event) => (window.location.href = '/home')}>please adopt a pet</button> */
+}

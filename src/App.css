@@ -47,7 +47,8 @@ p {
 	font-size: 15pt;
 }
 
-button {
+button,
+.button {
 	padding: .5rem;
 	background-color: #909090;
 	color: white;
@@ -58,7 +59,8 @@ button {
 	align-items: center;
 }
 input,
-button {
+button,
+.button {
 	font-family: 'Amatic SC';
 	font-size: 15pt;
 	margin: 1rem;
@@ -67,22 +69,31 @@ button {
 	border-width: thin;
 	text-align: center;
 }
-button {
+button,
+.button {
 	border-style: none;
 }
 label {
 	font-size: 20pt;
 }
 input:hover,
-button:hover {
+button:hover,
+.button:hover {
 	box-shadow: 3px 3px 3px rgba(0, 0, 0, .4);
 }
-button:hover {
+button:hover,
+.button:hover {
 	border-style: white;
 }
 input:focus,
-button:focus {
+button:focus,
+.button:focus {
 	outline: 0;
+}
+.button {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.6);
+	letter-spacing: .2;
 }
 
 .container {
