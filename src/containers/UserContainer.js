@@ -14,7 +14,6 @@ class UserContainer extends React.Component {
 				<div>
 					<Segment>
 						hi {currentUser.name}! <br />
-						<p>please refresh to update pets</p>
 					</Segment>
 					<Segment>
 						<UserPets pets={currentUser.pets} currentUser={currentUser} />

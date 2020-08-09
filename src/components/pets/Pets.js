@@ -1,7 +1,7 @@
 import React from 'react';
-
 import { Card, Image } from 'semantic-ui-react';
 import './Pets.css';
+import './Pet.js';
 
 class Pets extends React.Component {
 	constructor(props) {

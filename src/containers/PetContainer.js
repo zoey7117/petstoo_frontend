@@ -1,7 +1,6 @@
 import React from 'react';
 import { Fragment } from 'react';
 import Pets from '../components/pets/Pets';
-import UserContainer from './UserContainer';
 
 class PetContainer extends React.Component {
 	constructor({ updateUser, currentUser }) {
