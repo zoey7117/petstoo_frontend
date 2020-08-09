@@ -28,7 +28,7 @@ class Pet extends React.Component {
 		if (pet) {
 			return(
 
-        <Card  >
+        <Card className='indie-pet'>
           <Image src={pet.image}  alt='' className='pet-image' />
 
           { (this.state.front) ?

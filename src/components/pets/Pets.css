@@ -2,7 +2,8 @@
 	margin: 2rem;
 	text-align: center;
 }
-.pet-card {
+.pet-card,
+.indie-pet {
 	text-align: center;
 	letter-spacing: 1px;
 	border: grey solid 1px;
@@ -20,7 +21,6 @@ hr {
 }
 .pet-image {
 	justify-self: center;
-
 	height: 17.5rem;
 	width: 17.5rem;
 }
