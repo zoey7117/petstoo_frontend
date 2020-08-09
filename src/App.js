@@ -7,7 +7,6 @@ import { Switch, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import LoginForm from './components/users/LoginForm';
 import SignupForm from './components/users/SignupForm';
-import UserPets from './components/users/UserPets';
 import UserContainer from './containers/UserContainer';
 import MobileNavbar from './components/mobileNavbar/MobileNavbar';
 import Backdrop from './components/mobileNavbar/Backdrop';

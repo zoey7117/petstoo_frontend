@@ -1,7 +1,5 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
 import Pet from '../pets/Pet';
-// '../components/pets/Pets'
 
 class UserPets extends React.Component {
 	renderPets() {
@@ -9,16 +7,6 @@ class UserPets extends React.Component {
 	}
 
 	render() {
-		// const { pets } = this.props.pets;
-		// console.log(
-		// 	this.props,
-		// 	'this.props.pets',
-		// 	this.props.pets,
-		// 	'this.props.currentUser',
-		// 	this.props.currentUser,
-		// 	'this.props.currentUser.pets',
-		// 	this.props.currentUser.pets
-		// );
 		if (this.props.currentUser.pets.length === 0) {
 			return (
 				<h5>
