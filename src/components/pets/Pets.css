@@ -16,7 +16,7 @@
 
 hr {
 	border: none;
-	height: 1px;
+	height: .5px;
 	background-color: grey;
 }
 .pet-image {
