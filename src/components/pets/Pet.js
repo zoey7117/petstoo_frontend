@@ -37,7 +37,7 @@ class Pet extends React.Component {
               <Card.Description>
                 <h3>hi! i'm {pet.name}</h3>
                   <h5>i'm {pet.age} years old.</h5>
-                <hr></hr>
+                <hr/>
               </Card.Description>
 
                 <button size='mini' onClick={this.toggleCard}>flip to tend to me</button>
@@ -45,7 +45,7 @@ class Pet extends React.Component {
 
             </>) :
             <Card.Content >
-              { (this.state.hungry) ? <button className='hungry' onClick={this.hungryToggle}>i'm stuffed, time for a nap</button> : <button className='hungry'  onClick={this.hungryToggle}>i'm hungry, please feed me</button> }<br/><hr></hr>
+              { (this.state.hungry) ? <button className='hungry' onClick={this.hungryToggle}>i'm stuffed, time for a nap</button> : <button className='hungry'  onClick={this.hungryToggle}>i'm hungry, please feed me</button> }<br/><hr/>
             <button size='mini' onClick={this.toggleCard}>flip back</button>
             </Card.Content >
            }
