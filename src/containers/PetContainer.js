@@ -19,7 +19,9 @@ class PetContainer extends React.Component {
 		this._isMounted = true;
 
 		// fetch('http://localhost:3000/api/v1/pets')
-		fetch('https://pacific-hollows-81769.herokuapp.com/api/v1/pets')
+		// fetch('https://pacific-hollows-81769.herokuapp.com/api/v1/pets')
+		fetch(`https://petstoo-api.netlify.app/api/v1/pets`, {
+
 			.then((resp) => resp.json())
 			// .then(console.log)
 			.then((resp) => {
@@ -35,7 +37,8 @@ class PetContainer extends React.Component {
 		if (this.props.currentUser) {
 			console.log(petId);
 			// fetch(`http://localhost:3000/api/v1/pets/${petId}/adopt`, {
-			fetch(`https://pacific-hollows-81769.herokuapp.com/api/v1/pets/${petId}/adopt`, {
+				fetch(`https://petstoo-api.netlify.app/api/v1/pets/${petId}/adopt`, {
+				// fetch(`https://pacific-hollows-81769.herokuapp.com/api/v1/pets/${petId}/adopt`, {
 				method: 'POST',
 				headers: {
 					Authorization: localStorage.getItem('token'),
