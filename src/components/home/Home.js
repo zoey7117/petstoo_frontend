@@ -3,7 +3,7 @@ import PetContainer from '../../containers/PetContainer';
 
 const Home = (props) => {
 	return (
-		<div>
+		<div className="pet-container">
 			<PetContainer updateUser={props.updateUser} currentUser={props.currentUser} />
 		</div>
 	);

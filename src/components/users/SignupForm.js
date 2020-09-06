@@ -16,8 +16,8 @@ class SignupForm extends React.Component {
 
 	createUser = () => {
 		// fetch('http://localhost:3000/api/v1/users', {
-		fetch(`https://petstoo-api.netlify.app/api/v1/users`, {
-			// fetch(`https://pacific-hollows-81769.herokuapp.com/api/v1/users`, {
+		// fetch(`https://petstoo-api.netlify.app/api/v1/users`, {
+		fetch(`https://pacific-hollows-81769.herokuapp.com/api/v1/users`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ class UserContainer extends React.Component {
 		if (currentUser) {
 			return (
 				<div>
-					<Segment>
+					<Segment className="pet-container">
 						hi {currentUser.name}! <br />
 					</Segment>
 					<Segment>

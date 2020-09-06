@@ -98,7 +98,7 @@ class App extends Component {
 			backdrop = <Backdrop click={this.toggleBackClickHandler} />;
 		}
 		return (
-			<div className="App">
+			<div className="app">
 				<Navbar
 					buttonClickHandler={this.toggleButtonClickHandler}
 					currentUser={this.state.currentUser}

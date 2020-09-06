@@ -2,6 +2,9 @@
 	margin: 2rem;
 	text-align: center;
 }
+.pet-container {
+	margin-top: 70px;
+}
 .pet-card,
 .indie-pet {
 	text-align: center;
