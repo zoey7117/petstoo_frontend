@@ -22,6 +22,8 @@ Run npm install and npm start. You will be asked if you would like to run the pr
 Your browser will automatically launch the Adopt A Pet app to its home page.
 
 You can shut down both servers by typing Control C in the terminal window where they are running.
+## To Do
+• Incorporate toy playing, walking with your pet.
 
 ## Built with
 • React <br/>
