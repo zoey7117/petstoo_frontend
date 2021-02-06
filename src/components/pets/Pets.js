@@ -2,6 +2,9 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import { Card, Image } from 'semantic-ui-react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
+
 import './Pets.css';
 import './Pet.js';
 
@@ -41,8 +44,15 @@ class Pets extends React.Component {
 		return allpets.map((pet) => {
 			return (
 				<Card key={pet.id} className="pet-card">
-					<Image src={pet.image} alt="" className="pet-image" />{' '}
-					{
+					<LazyLoadImage
+						src={pet.image}
+						className="pet-image"
+					>
+
+					{/* <Image src={pet.image} alt="" className="pet-image" />{' '} */}
+					</LazyLoadImage>
+						{
+
 						<Card.Content>
 							{' '}
 							<Card.Description>
@@ -72,7 +82,7 @@ class Pets extends React.Component {
 							<br />
 						</Card.Content>
 					}
-				</Card>
+					</Card>
 			);
 		});
 	}
